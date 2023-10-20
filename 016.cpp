@@ -1,19 +1,27 @@
 #include <iostream>
-#include <vector>
+#include <string>
+#include <algorithm>
 
 using namespace std;
 
 int main()
 {
-    vector<int> numbers = {1};
-    int target = 3;
+    string number = "1"; //using a string to store big numbers
+    int target = 1000;
     for (int i = 1; i <= target; i++) {
-        for (vector<int>::iterator n = numbers.begin(); n < numbers.end(); n++) {
-            *n *= 2;
+        int co = 0; //carryover
+        int aux;
+        for (char& c : number) {
+            aux = 2*(c-'0')+co;
+            co = aux/10;
+            c = '0'+aux%10;
         }
+        if (co) number.push_back(co+'0'); //the duplication finished and carryover is not 0, so we add a new digit
     }
-    for (auto n : numbers) {
-        cout << n;
+    reverse(number.begin(), number.end()); //the number is backwards when finished, though this doesnt affect the result
+    int sum = 0;
+    for (char& c : number) {
+        sum += c-'0';
     }
-    cout << endl;
+    cout << sum << endl;
 }

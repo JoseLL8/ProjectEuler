@@ -20,5 +20,5 @@ int main()
     }
     int k = target / (2*m*m+2*m*n);
     //cout << k << " " << m << " " << n << endl;
-    cout << k*k*k*(m*m-n*n)*2*m*n*(m*m+n*n) << endl;
+    cout << k*k*k*(m*m-n*n)*2*m*n*(m*m+n*n) << endl; //a*b*c*k^3
 }
