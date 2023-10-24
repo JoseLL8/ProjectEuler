@@ -21,4 +21,7 @@ int main()
     int k = target / (2*m*m+2*m*n);
     //cout << k << " " << m << " " << n << endl;
     cout << k*k*k*(m*m-n*n)*2*m*n*(m*m+n*n) << endl; //a*b*c*k^3
+    //note: in a later problem (39) i have seen that the usage of this formula is wrong here
+    //the formula does generate primitive triplets, but if both m and n are odd then a, b and c need to be halved in order to obtain the primitive triplet
+    //in this case it does find the unique combination necessary for the target, for other target values it might not
 }
