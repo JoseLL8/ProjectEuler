@@ -10,7 +10,7 @@ bool checkPandigitalProduct(int n) { //using modified optimization from problem 
     for (int i=2; i<10 && result < 0x1ff; i++) {//usually the loop will end soon before i=9
         while (product > 0) {
             int digit = product%10;
-            if (!digit) return false; //0 cant be in an pandigital
+            if (!digit) return false; //0 cant be in a pandigital
             if (result & (1 << (digit-1))) return false; //digit already found
             result |= (1 << (digit-1)); //flip bit corresponding to the digit
             product /= 10;
