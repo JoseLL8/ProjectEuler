@@ -15,7 +15,7 @@ int main()
         int bookmark = 1;
         for (int i = 2; i < line.length(); i++) {
             if (line[i] == ',') {
-                //cout << line.substr(bookmark, i-bookmark-2) << endl;
+                cout << line.substr(bookmark, i-bookmark-1) << endl;
                 names.push_back(line.substr(bookmark, i-bookmark-1));
                 i+=2;
                 bookmark = i;
